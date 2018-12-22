@@ -1,0 +1,34 @@
+daniel.hazan
+harelyac
+
+ex.5
+
+=============================
+=      File description     =
+=============================
+this program contains one package named fileprocessing which is aimed to print ordered and filtered files according to
+the commandFile and SourceDir given  in the DirectoryProcessor arguments
+1)DirectoryProcessor.java - contains the main method running the program
+2)commandFileHandler.java - contains methods that read the commandFile line by line and split it into sections and subsections
+3)Section.java - this class contains the Factory which creates the subsections of each Section i.e Filter and Order
+4)Filter.java - this class contains methods which filter the given Files Array according to the case given in the SubSection line
+4)Order.java - this class contains methods which order the given Files Array according to the case given in the SubSection line
+5)SubSectionNamesException.java -this class extends Exception, contains the methods which deal with the type2 exceptions in the code.
+
+=============================
+=          Design           =
+=============================
+most of the design patterns are the same as presented in the UML , except of the Factory method which was added to the Section Class
+and was aimed to better organize the data taken from the commandFileHandler. the program was eventually modular and was easy to work with
+because the flow of the code was correct and the with logic heirarchy. 
+also some changes were made with the handling of the Errors type2. as we mentioned in the UML, errors of type1 were handled in the 
+Filter and Order Classes without throwing it to the main class. thus, the errors type1 were handled properly in the heirachy of the program.
+ErrorsType2 had to be handled in the Section and CommandFileHandler classes throwing the exceptions to the main class, because these errors
+are derived from incorrect Format of the CommandFile. thus, the design heirarchy of our program was matched to handling these error types 
+pretty well.  
+=============================
+=  Implementation details   =
+=============================
+Mostly we've used the comparable/comparator concept. we made a new brand comparator that sorted the list strings into types and names without
+ thier default compareTo Methods. because String is a comparable class we had to change he compareTo method it uses in a way that we've made 
+a new comparator and invoked it by calling compareTo with two objects again.  
