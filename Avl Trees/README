@@ -1,0 +1,53 @@
+harelyac
+311319990
+
+Harel Yacovian
+LEGEND EX4!
+
+=============================
+=      File description     =
+=============================
+AvlNode.java - this class represent the node which the tree is consist of.
+includes some features relevant to node. like getParent, getChild left and right. 
+all those accroding to the binarySearchTree ideal.
+
+AvlTree.java - this class represent the tree istself. it extends binarysearchTree.
+make an avl tree according to the avl feature. meaning the height is at most 1.
+between two subtrees of a node.
+
+BinarySearchTree.java - the origin class of the tree. most of the code algoritem is there.
+make even the rotatation. and balancing. i could not find a way to put the balancing in the avl tree.
+
+InOrderIteration - this is an iterator for the data structure that i've made. function well. and use 
+a smart algoritem to run.
+
+=============================
+=          Design           =
+=============================
+
+I can say that it was interesting to code this project. unfortunatley i was sick and could not put full time on it
+
+
+=============================
+=  Implementation details   =
+=============================
+
+i tried to make the code to look clear as much as possible. i added a lot of fields on node object.
+my delete() method was a challange and also the balancing part.
+
+=============================
+=    Answers to questions   =
+=============================
+1. insert: 15, 16, 21, 18 , 17 , 10, 12, 11, 7, 8, 5, 2
+
+
+2. The AvlTree(int[] data) runs in O(nlogn) because the add method cost nlogn time complexity.
+
+3. The running time of AvlTree(AvlTree avltree) is also O(nlogn) i made for avltree an iterator
+this iterator go over all the values of the given tree and put them in a linked list (O(nlogn)) after that
+i run over the array (O(n)) and add elements to the new tree. add takes O(log(n)).all together is
+O(nlogn + nlogn) = O(nlogn).
+
+
+
+
