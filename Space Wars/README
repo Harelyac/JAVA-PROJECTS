@@ -1,0 +1,34 @@
+harelyac
+
+=============================
+=      File description     =
+=============================
+A SpaceShip game which consisnt of 6 types of spaceships!, each ship is an subclass for the spaceship class 
+which plays the role as an abstract class. the override is only for 1 method - "doAction". the game runs by the spacewars class 
+and it continue untill the play press the esc button. 
+each game the object passed by the args array are made and the game begin by making a move.
+the move mean invoking a doAction method for each object.
+
+=============================
+=          Design           =
+=============================
+after learning the interface of the game. and all the public method that are being published by certains classes. 
+first i worked on the spaceship class untill i could make a first run of the game. after that, i started working on the players.
+i can say it was quite fun working and understanding which method to use and decide when to use it. i made the spaceship calss 
+as an abstact one and all the types of spaceships was just subclasses that made an override. i barely used super. i really found no
+for that in this ex.
+
+=============================
+=  Implementation details   =
+=============================
+i would like say few things about the ex itself. i think it was too much time consuming but not in term of getting a good knowledge
+after putting effort. in short i think it was more understanding how to interact with the method that you already wrote rather than 
+actually learn how to use or more deep understanding of inheritance. 
+
+=============================
+=    Answers to questions   =
+=============================
+no questions were asked.
+
+
+
