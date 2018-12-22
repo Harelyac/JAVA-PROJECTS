@@ -1,0 +1,71 @@
+harelyac
+311319990
+
+Harel Yacovian
+LEGEND EX3!
+
+=============================
+=      File description     =
+=============================
+1.SimpleHashSet.java - a class that implement simple set interface, which got two subclasses which extends it.
+it got static methods shared with all classes and overriden abstract methods by each of the classes. 
+as well as fields static and instance variables.
+
+2.ClosedHashSet.java - a class that implement simplpleSet and extends simpleHash set. moreover this class deal 
+an collision problem on hashset in one way by probing with a given formula. all this to make the hashset a O(1)
+time complexity.
+
+3.OpenHashSet.java - a class that implement simplpleSet and extends simpleHash set. moreover this class deal 
+with a collsion problem on hashset in another way, by turnning the hashtable onto an array of arraylist. this makes 
+the hashset O(1) also. again with given formula to determine an index for a given bucket - arraylist.
+
+4.LinkedListWrapper - java as a problem of handling an array of Genrics collections. this means java need to 
+be treatned with some tricks to overcome this problem i'll discuss this resolve later one.
+
+5.SimpleSetPerformanceAnalayzer - this is the main class of the project. from which we run it all. we check all 
+comparisons there. specific for this project we measured contain time between all structure and adding process.
+
+=============================
+=          Design           =
+=============================
+
+about polymorphysem - i made simplehashset an abstract class. both classes open and close inherited from it.
+some method where overrriden and some were left implemented by the class itself. according to project need. and 
+necessity.
+
+both open and close played two roles against interface and against super class. 
+
+I made a class to deal with the liknedlist problem as the given instruction on the ex pdf.
+
+i used collection facade to make polymorphysem more vivid which means with that we aggragated all classes 
+under 1 father(Cliché) for that we can define them all inside an array and performe different common operation 
+on them. and also to make all structures use only the 4 operation that were listed on the simpleSet.
+
+
+=============================
+=  Implementation details   =
+=============================
+1.How you implemented OpenHashSet’s table - as described above. i overcame the obstacle of linked list by making 
+wonderful wrapper which used to make a new face for linkedList object. that way i could make whatever i feel right.
+
+2. How you implemented the deletion mechanism in ClosedHashSet -i used the formula that was handed to me on pdf.
+i called the containe where there i had the massive work. 
+
+3. i would like to note down that, this EX took me more that i would expect. took me quite time to fully understand the pdf. i know that this say is not just from me but from more students here. i hope that this wonderful ex will stay with the topic but moreover will be much described on the upcoming years.
+
+=============================
+=    Answers to questions   =
+=============================
+
+the results in depth summary:
+
+1.seems like in total view linked list more time then the others in all aspects.
+more pricesly we can say that linked list had huge gap difference in contain operation but on adding from file 
+it didnt differ much from the rest.
+
+2.about finding a number seems like open took more time than close, but when it comes to strings, you bet close 
+took much more in a negligible manner.
+
+3.when it comes to adding there was no such a difference between them all.
+
+
