@@ -1,0 +1,66 @@
+harelyac
+daniel.hazan
+
+ex.6
+
+=============================
+=      File description     =
+=============================
+Sjavac.java - contains the main method which runs the game by reading each line	and throws exceptions if needed
+LinesReader.java - contains the method that read each line of the file and runs the main algorithm which search for
+exceptions by parsing the file line by line and create the LineTypeObject for each line
+LineTypeFactory.java - contains the factory method that creates the LineType Objects by matching each line to different cases
+of patterns using regular expression
+LineType.java  - abstract class which is the super class of line type Objects, containg the isValid and getType methods
+which are overriden by all kinds of LineType objects
+ 																																									
+Variables.java - contains the methods checking the Variable line of the file
+Block.java - contains the methods checking the Block line of the file
+
+
+
+=============================
+=          Design           =
+=============================
+as we mentioned in the Uml we all lines of the file were objects of LineType class ( all have the isValid() method)
+and the flow of our program was reading line by line with the BufferReader on LinesReader class, and invoking the LineType Factory
+method which creates each LineType object according to the current line's match to the given Pattern.
+by parsing the the lines we keep the variables and heirarchy of local and global blocks in special ArrayLists composed in the LinesReader field
+and than checking the validity of each line  by its location in the file. 
+moreover, we used the Block class as an abstract class extending LineType for the Statement and Method classes, which reflects the inheritance relation
+of the if/while Block statements and the Method Block. both of them were treated as blocks which begins a new herarchy of local variables derieved
+from their heirarcht in the entire file structure.
+
+=============================
+=  Implementation details   =
+=============================
+crucail details were changed from the uml, the most important one was the datastructure which contains the file's lines as objects. we decided 
+to check the exceptions more dynamically and by the time of meeting the exceptions from lower calsses (by the iValid() method) - we threw the 
+exception to the main class and printed the proper message to screen. we believe after getting rid from parsing the lines firs to a data strucure and 
+only then go over it) is less dynamic and can ease our code' modularity.
+for making our code mre mudular we also added more Variable classes differentiating each type of variable to a different Object and than making changes
+and add more properties to our Validation process is more comfortable.  
+
+=============================
+=    Answers to questions   =
+=============================
+
+(Q6.2)Therefor, because our code is modular, adding a new type of a variable,  can be done easily by creating a new float object that extends 
+ Variables, and creating its Type functions
+
+2 features we can support by some steps:
+
+ - Using methods of standard java:
+ We would add new object of StandardMethods extending LineType, collecting son classes in the correct
+ connection, building their isValid and getType functions by
+ the correct regex, and making help-functions 
+
+ -Different method type:
+ We would make a methodTypeFactory, that check for different types of methods containing abstract methods which are common to all
+kinds of Method types, as CheckingParameters and Checking Modifier and each class will compose a different Pattern reflected by 
+each method type 
+
+Patterns:
+(\w+)\s[=]\s(\"?\'?\w+\.?\w*\"?\'?) - checking the intialization of variables by spliting into groups. each group catches
+diferrent part of the line - before the "=" sign" and after
+^[-]?[0-9]+\.?[0-9]*$ / - chcking if the variable assigned to the variable is double' i.e contains "." between its digits 
